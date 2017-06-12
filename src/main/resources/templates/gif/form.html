@@ -18,41 +18,21 @@
         <div class="row">
             <div class="col s12 l8"/>
                 <div class="file-wrapper">
-                    <!--Not binding the file field because the file property isn't a property of the GIF entity
-                        This change can be made (and may be good reason to do so to add a file field to the
-                        GIF entity.
-
-                        For more information on how to complete: https://teamtreehouse.com/library/a-file-upload-form-in-thymeleaf-->
-                    <input type="file" id="file" name="file"/>
+                   <input type="file" id="file" name="file"/>
                     <span class="placeholder" data-placeholder="Choose an image...">Choose an image...</span>
-                    <!--If the Browse button is not working, it could be because the label on the form can't find an input element
-                        whose ID is "file".
-                        In browsers, the for attribute connects labels to input elements using the input elements ID attribute.
-                        EX: The input element (line 25) has an ID attribute named file and I also added a name attribute with the value file
-
-                        This label element is what renders the button. However, when you use this for attribute in a label, whatever value
-                        you place here, the browser will connect that with its associated input element. Using that input elements ID attribute
-                        NOT name attribute so this is for a file that means this label will be associated with this input since this
-                        input has a ID of file-->
-                    <label for="file" class="button">Browse</label>
+                     <label for="file" class="button">Browse</label>
                 </div>
             </div>
         <div class="row">
             <div class="col s12 l8">
-                <!--The th:field is using ObjectBinding which is why the asterisk is used and not the dollar sign-->
                 <input type="text" th:field="*{description}" placeholder="Description"/>
             </div>
         </div>
         <div class="row">
             <div class="col s12 l8">
-                <!--The dot notation is used in th:field because of the category property being part of the the bound
-                    object (which is GIF). So essentially, it's gif.category.id
-                    This whole select element represents the ID of the category that we want to be associated with the
-                    GIF that's uploaded-->
                 <select th:field="*{category.id}" class="cs-select cs-skin-border">
                     <option value="" disabled="disabled">Select a category</option>
-                    <!--Iterate over the actual categories in the app instead of displaying a single static category-->
-                    <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}" th:style="|color:${cat.colorCode}|">Technology</option>
+                      <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}" th:style="|color:${cat.colorCode}|">Technology</option>
                 </select>
             </div>
         </div>
