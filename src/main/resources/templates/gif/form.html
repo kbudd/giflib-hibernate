@@ -12,7 +12,6 @@
         </div>
     </div>
     <div class="divider"></div>
-    <!--The form is using ObjectBinding to bind the GIF object (binding uses the dollar sign)-->
     <form th:action="@{/gifs}" method="post" th:object="${gif}" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}"/>
         <div class="row">
