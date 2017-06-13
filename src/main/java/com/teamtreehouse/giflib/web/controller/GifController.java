@@ -87,7 +87,7 @@ public class GifController {
         model.addAttribute("gif",new Gif());
         model.addAttribute("categories", categoryService.findAll());
 
-     return "gif/form";
+        return "gif/form";
     }
 
     // Form for editing an existing GIF
