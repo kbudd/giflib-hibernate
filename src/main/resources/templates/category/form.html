@@ -5,7 +5,6 @@
 <div th:replace="layout :: nav"></div>
 <div th:replace="layout :: flash"></div>
 <div class="container">
-    <!--Object Binding on the Category object-->
     <form th:action="@{/categories}" method="post" th:object="${category}">
         <div class="row">
             <div class="col s12">
